@@ -1,1 +1,51 @@
-# NYCU_HLS_FP_GCN
+# Scalable Streaming Accelerator of Graph Convolution Network 
+We develop a streaming-based accelerator to deal with large scale Graph Convolution Network.
+
+## Introduction
+
+Graph convolutional network (GCN) is a kind of convolutional neural network that has the ability to directly working with graphs and their structural information.
+And it can be generalize to two matrix operation: GEMM and SpMM. We seek to design an accelerator which can deal with real world graph (which is irregular and large).
+
+## Major Optimizations
+In order to compute large graph on the limited FPGA resource, we use the following strategy and method to utilize the on-chip memory and optimize the dataflow.
+1. Matrix Tiling
+2. Streaming Dataflow
+
+As the result, We now can control the Bram utilization used by the FPGA and scale-up the problem-set.
+
+
+##  Fold Structure
+
+    .
+    ├── docs                    # Documentation files 
+    ├── src                     # Source files 
+    ├── tb                      # Automated tests 
+    ├── LICENSE
+    └── README.md
+
+## Rebuild the Project
+
+### Requirements
+* Test on Windows 10
+* Vitis HLS 2021.2 and Vivado 2021.2
+
+### Procedure
+In Vitis HLS
+
+choose the board you use(We test on pynq-z2)
+
+Add `src` files into `source`, 
+Add `tb` files into `Testbench`
+
+In `project settings`
+choose `GCN.cpp` as Top function
+
+Finally, go through `sim` -> `synthesis` -> `cosim`
+
+## Testing
+
+Testcase generation:
+`python3 testcase.py`
+
+run `sim` for functional testing
+run `cosim` for rtl testing
