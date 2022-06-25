@@ -11,6 +11,8 @@ In order to compute large graph on the limited FPGA resource, we use the followi
 1. Matrix Tiling
 2. Streaming Dataflow
 
+For GEMM implementation, we use the code from https://spcl.inf.ethz.ch/Teaching/hls-tutorial/
+
 As the result, We now can control the Bram utilization used by the FPGA and scale-up the problem-set.
 
 
