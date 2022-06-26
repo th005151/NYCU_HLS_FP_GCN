@@ -45,16 +45,22 @@ choose `GCN.cpp` as Top function
 ---
 
 #### parameter setting
-In GCN.h, for SPMM
-set `SIZE` for square adjcency matrix A,
-set `SIZE_K` for the H's col size ,
-set `SIZE_N` for the W's col size ,
-set `NNZ` for the number of non-zero  
+In GCN.h, for SPMM  
+set `SIZE` for square adjcency matrix A,  
+set `SIZE_K` for the H's col size ,  
+set `SIZE_N` for the W's col size ,  
+set `NNZ` for the number of non-zero    
 
-In GEMM.h for GEMM
-set `M` for matrix a's row,
-set `K` for matrix a's col ,
-set `N` for matrix b's col ,
+For partition, the value to set need to satisfy below equation  
+`BLOCK_SIZE` = `SIZE` / `PARTITION_NUM`  
+which `SIZE` must be divided by `PARTITION_NUM`  
+
+
+
+In GEMM.h for GEMM  
+set `M` for matrix a's row  
+set `K` for matrix a's col   
+set `N` for matrix b's col   
 
 ---
 
