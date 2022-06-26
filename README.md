@@ -42,6 +42,22 @@ Add `tb` files into `Testbench`
 In `project settings`
 choose `GCN.cpp` as Top function
 
+---
+
+#### parameter setting
+In GCN.h, for SPMM
+set `SIZE` for square adjcency matrix A,
+set `SIZE_K` for the H's col size ,
+set `SIZE_N` for the W's col size ,
+set `NNZ` for the number of non-zero  
+
+In GEMM.h for GEMM
+set `M` for matrix a's row,
+set `K` for matrix a's col ,
+set `N` for matrix b's col ,
+
+---
+
 Finally, go through `sim` -> `synthesis` -> `cosim`
 
 ## Testing
